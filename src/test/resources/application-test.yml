@@ -1,0 +1,15 @@
+spring:
+  cloud:
+    discovery:
+      enabled: false
+    gateway:
+      server:
+        webflux:
+          routes:
+            - id: bff-libroclases
+              uri: ${test.bff.url}
+              predicates:
+                - Path=/api/**
+eureka:
+  client:
+    enabled: false
